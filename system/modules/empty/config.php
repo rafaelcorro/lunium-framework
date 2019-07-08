@@ -7,11 +7,9 @@
  * @license     MIT
  *
  */
+//Menú principal
+//menú padre: none (Por defecto)
+$menu_parent="Otros";
+$menu_title="Empty";
 
-class DemoModel extends Model{
-    function __construct(){
-        parent::__construct();
-
-    }
-}
 

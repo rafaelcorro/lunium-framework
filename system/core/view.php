@@ -16,7 +16,9 @@ class View{
 
     function render($name){
         $module=explode('/',$name);
-        require '../system/modules/'.$module[0].'/views/'.$name.'.php';
+        require_once '../themes/'.constant('TEMPLATE').'/header.php';
+        require_once '../system/modules/'.$module[0].'/views/'.$name.'.php';
+        require_once '../themes/'.constant('TEMPLATE').'/footer.php';
     }
 }
 

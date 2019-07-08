@@ -8,7 +8,7 @@
  *
  */
 
-if (!function_exists('date_interval')) {
+if (!function_exists('helper_dateInterval')) {
     /**
      * Permite saber la diferencia de tiempo entre dos fechas
      *
@@ -16,7 +16,7 @@ if (!function_exists('date_interval')) {
      * @param \Datetime $date_fin   Fecha final
      * @return array {"d","h","m","s"}
      */
-    function date_interval($date_ini,$date_fin)
+    function helper_dateInterval($date_ini,$date_fin)
     {
         $datetime1 = new DateTime($date_ini);
         $datetime2 = new DateTime($date_fin);
@@ -34,14 +34,14 @@ if (!function_exists('date_interval')) {
     }
 }
 
-if (!function_exists('dateformat')) {
+if (!function_exists('helper_dateFormat')) {
     /**
      * Da formato a una fecha tanto para mostrarla como para insertarla en la base de datos
      *
      * @param string    $date
      * @return string
      */
-    function dateformat($date)
+    function helper_dateFormat($date)
     {
         $separator= strpos($date, "/");
         if($separator === false){

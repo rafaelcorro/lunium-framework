@@ -27,6 +27,10 @@ class MainController extends Controller{
         }
         $this->view->render('main/index');
     }
+    
+    function pageError(){
+       $this->view->render('main/error');  
+    }
 
     function render(){
         $data="0";

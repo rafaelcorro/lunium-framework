@@ -15,6 +15,7 @@ if(constant('DEVELOPMENT')=="yes"){
 }
 
 require_once '../system/autoload.php';
+require_once '../vendor/autoload.php';
 
 $app=new App();
 

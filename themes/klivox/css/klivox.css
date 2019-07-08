@@ -8,9 +8,6 @@ h1,h2,h3,h4,h5,h6 {
   font-weight: 800 !important;
 }
 
-.major{
-	margin-top:100px;
-}
 .row{
     margin-bottom:20px;
 }
@@ -122,4 +119,7 @@ header.masthead .masthead-content .masthead-subheading {
 .btn-secondary:focus {
   -webkit-box-shadow: 0 0 0 0.2rem rgba(255, 106, 0, 0.5);
   box-shadow: 0 0 0 0.2rem rgba(255, 106, 0, 0.5);
+}
+#content{
+    margin-top:100px;
 }

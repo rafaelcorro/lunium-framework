@@ -18,14 +18,13 @@ class MainModel extends Model{
             $conn=$this->db->connect();
 
             if(is_array($datos) && count($datos)>1){
-                $date=dateformat($datos["date"]);
+                $date=helper_dateFormat($datos["date"]);
                 $stmt = $conn->prepare("SELECT * FROM activity WHERE date_start>'".$date."'"); 
             }else{
                 $stmt = $conn->prepare("SELECT * FROM activity");
             }
             
             $stmt->execute();
-            //$datos=array();
             $rows = $stmt->fetchALL();
             
             return $rows;

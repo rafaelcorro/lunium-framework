@@ -12,7 +12,7 @@ define('DEVELOPMENT','yes');
 
 define('DIRECTORY','lunium-framework');
 define('TEMPLATE','klivox');
-define('TITLE','Lunium Framework PHP');
+define('TITLE','Lunium Framework');
 
 define('HOST','localhost');
 define('DB','reservations');

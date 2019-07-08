@@ -1,89 +1,56 @@
 <?php
-/* 
- * lunium-framework-php
- * @author  Rafael Corro Haba <rafaelcorro@gmail.com>
+/**
+ * Lunium Framework
+ *
+ * @author      Rafael Corro Haba <rafaelcorro@gmail.com>
+ * @link        https://github.com/rafaelcorro/lunium-framework
+ * @license     MIT
+ *
  */
-require_once '../styles/themes/'.constant('TEMPLATE').'/header.php';
 ?>
 
-<header class="major">
-        <h2>Reservas</h2>
-        <p>Evaluación de conocimientos</p>
-</header>
-<div class="container">
-    <!-- Content -->
-    <section id="content">
-        <p><?php echo $this->message; ?></p>
-
-        <section>
-            <form action="<?php echo 'http://' . $_SERVER['SERVER_NAME'] . '/'.constant('DIRECTORY').'/main/searchActivity/';?>" method="POST">
-                <div class="row uniform">
-                    <div class="5u 8u">
-                            <label for="date">Fecha de la actividad</label>
-
-                            <input type="text" name="date" id="dp1" required>
-
-                            <script>
-                                    $(function() {
-                                    $("#dp1").datepicker();
-                            });
-                            </script>
-
-                    </div>
-                    <div class="4u 4u">
-                            <label for="numpeople">Nº de personas</label>
-                            <select name="numpeople">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                    <option>6</option>
-                                    <option>7</option>
-                                    <option>8</option>
-                            </select>
-                    </div>
-
-                    <div class="3u 3u">
-                            <div style="height:27px;">&nbsp;</div>
-                            <input type="submit" value="Buscar"/>
-                    </div>
+<div class="container"> 
+    <div class="row">
+        <div class="col-md-4 offset-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title text-center">Account Login</h3>
                 </div>
-                <div class="row uniform">
-                    <!-- Table -->
-                    <section style="width:100%;">
-                        <h4>Actividades</h4>
-                        <div class="table-wrapper">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>Name</th>
-                                        <th>Description</th>
-                                        <th>Price</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                <?php
-                                    //echo var_dump($this->activity)."<---dump<br />";
-                                    //include_once '../models/activity.php';
-                                    foreach($this->activity as $row){
-                                        echo "<tr>";
-                                        foreach($row as $row2){
-                                            echo "<td>".$row2."</td>";
-                                        }
-                                        echo "</tr>";
-                                    }
-                                ?>
-                                </tbody>
-                            </table>
+                <div class="panel-body" style="margin-bottom:120px;">
+                    <form action="<?= helper_formAction("login","login"); ?>" method="post">
+                        <div class="form-group">
+                            <label for="email-input">Email <span class="text-danger">*</span></label>
+                            <input type="text" value="<?php if(isset($_REQUEST["email"])){echo $_REQUEST["email"];}?>" id="email-input" class="form-control" name="email" />
+                            <?php
+                            if(isset($this->alert["email"]) && $this->alert["email"]!=""){
+                                echo '<div class="alert alert-danger" role="alert"><strong>Oops!</strong> ';
+                                   echo $this->alert["email"]; 
+                                echo '</div>';
+                            }
+                            ?>
                         </div>
-                    </section>
+                        <div class="form-group">
+                            <label for="password-input">Password <span class="text-danger">*</span></label>
+                            <input type="password"  id="password-input" class="form-control" name="password" />
+                            <?php
+                            if(isset($this->alert["password"]) && $this->alert["password"]!=""){
+                                echo '<div class="alert alert-danger" role="alert"><strong>Oops!</strong> ';
+                                   echo $this->alert["password"]; 
+                                echo '</div>';
+                            }
+                            ?>
+                        </div>
+                        <div class="checkbox">
+                            <label for="remember">
+                                <input type="checkbox" id="remember" name="remember" /> Remember me
+                            </label>
+                        </div>
+                        <input type="hidden" name="csrf_token" value="<?php //echo App\Utility\Token::generate(); ?>" />
+                        <button type="submit" class="btn btn-primary">Sign In</button>
+                        <a href="<?= ""//$this->makeURL("register"); ?>" class="btn btn-link">Register</a>
+                    </form>
                 </div>
-            </form>
-        </section>
-    </section>
+            </div>
+        </div>
+    </div>
 </div>
-			
-<?php
-require_once '../styles/themes/'.constant('TEMPLATE').'/footer.php';
-

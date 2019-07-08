@@ -18,16 +18,16 @@
   <!-- Bootstrap core CSS -->
   <link href="vendor/twbs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Custom fonts for this template -->
+  <!-- Custom fonts for this template 
   <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
-
+-->
   <!-- Custom styles for this template -->
   <link href="themes/klivox/css/klivox.css" rel="stylesheet">
   <link href="vendor/components/jqueryui/themes/base/jquery-ui.min.css" rel="stylesheet">
   
   <script src="vendor/components/jquery/jquery.min.js"></script>
   <script src="vendor/components/jqueryui/jquery-ui.min.js"></script>
-  <!-- Bootstrap core JavaScript -->
+
   <script src="vendor/twbs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
 </head>
@@ -44,10 +44,11 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
           
         <?php 
-        $general=new general();
-        echo $general->menu();
+        $navbar=new Navbar();
+        echo $navbar->menu();
         ?>
      
       </div>
     </div>
   </nav> 
+  <section id="content">

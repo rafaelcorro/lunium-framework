@@ -24,6 +24,8 @@ class Database{
         $this->password=constant('PASSWORD');
         $this->charset=constant('CHARSET');
         $this->timezone=constant('TIMEZONE');
+        
+        $this->log=new Syslog();
     }
 
     function connect(){
@@ -40,6 +42,7 @@ class Database{
             return $conn;
         }catch(PDOexception $e){
             print_r('Error connection: '.$e->getMessage());
+            $this->log->add('lunium-framework','alert',$e->getMessage(),'','');
         }
     }
 }

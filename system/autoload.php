@@ -29,9 +29,10 @@ class Autoloader{
         foreach (static::$iterator as $file) {
             //filtramos para que solo cargue las clases del módulo activo y las clases generales
             $libs = strpos($file->getPathname(), "system/core/");
+            $services= strpos($file->getPathname(), "system/services/");
             $module = strpos($file->getPathname(), "system/modules/".$activeModule);
             
-            if (!$module === false || !$libs === false) {
+            if (!$module === false || !$libs === false || !$services === false) {
                 
                 if (strtolower($file->getFilename()) === strtolower($filename)) {
                     if ($file->isReadable()) {

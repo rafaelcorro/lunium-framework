@@ -7,8 +7,6 @@
  * @license     MIT
  *
  */
-
-require_once '../themes/'.constant('TEMPLATE').'/header.php';
 ?>
 
  <section>
@@ -122,9 +120,3 @@ require_once '../themes/'.constant('TEMPLATE').'/header.php';
       </div>
     </div>
 </section>
-
-
-			
-<?php
-require_once '../themes/'.constant('TEMPLATE').'/footer.php';
-

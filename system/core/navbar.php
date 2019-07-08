@@ -8,7 +8,10 @@
  *
  */
 
-class General{
+class Navbar{
+    public function __construct() {
+        $this->log=new Syslog();
+    }
     function menu(){
         //leemos los directorios que están en modules para leer el menú
         $directory = opendir("../system/modules/"); //ruta actual
@@ -22,10 +25,11 @@ class General{
                         require $filename;
                         $items[]=array('modulo'=>$file,'parent'=>$menu_parent,'title'=>$menu_title);
                     }else{
-                        throw new Exception("Module '".$file."': <span style='color:red'>Configuration file  not found!!!</span>");
+                        throw new Exception("Module '".$file."': Configuration file 'config.php' not found!!!");
                     }
                 } catch (Exception $e) {
                     echo $e->getMessage();
+                    $this->log->add('lunium-framework','error',$e->getMessage(),'','');
                     die();
                 }
             }
@@ -67,6 +71,17 @@ class General{
                 $a_attr=$menuAttr["a-menu"];
             }
         }
+        //--------------login--------------
+        if(isset($_SESSION["authorized"]) && $_SESSION["authorized"]==1){
+            
+            $menu=$menu."<li ".$menuAttr["li-parent"]."><a ".$menuAttr["a-parent"]." href=''>".$_SESSION["login_name"]."</a>";
+            $menu=$menu."<ul ".$menuAttr["ul-submenu"].">";
+            $menu=$menu."<li ".$menuAttr["li-submenu"].">";
+            $menu=$menu."<a ".$menuAttr["a-submenu"]." href='/".constant('DIRECTORY')."/public/login/logout/'>";
+            $menu=$menu."<i class='fas fa-user'></i>Cerrar sessión</a></li>";
+            $menu=$menu."</ul></li>";
+        }
+        //---------------------------------
         $menu=$menu."</ul>";
         
         return $menu;

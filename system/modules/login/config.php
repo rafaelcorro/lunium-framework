@@ -8,5 +8,3 @@
 //menú padre: none (Por defecto)
 $menu_parent="none";
 $menu_title="none";
-
-

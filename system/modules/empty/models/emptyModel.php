@@ -7,12 +7,11 @@
  * @license     MIT
  *
  */
-class Activity{
-    function __construct() {
-        echo "activity";
+
+class EmptyModel extends Model{
+    function __construct(){
+        parent::__construct();
+
     }
-    public $title;
-    public $description;
-    public $price;
 }
-	
+

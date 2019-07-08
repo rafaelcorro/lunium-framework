@@ -1,4 +1,5 @@
- 
+
+</section>
   <!-- Footer -->
   <footer class="py-5 bg-black">
     <div class="container">

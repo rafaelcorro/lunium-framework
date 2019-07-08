@@ -9,6 +9,8 @@
  */
 class App{
     function __construct(){
+        $this->log=new Syslog();
+        
         $this->helpersService();
         //obtenemos la url
         $url=isset($_GET["url"]) ? $_GET['url']:null;
@@ -18,7 +20,7 @@ class App{
         $url=explode('/',$url);
 
         if(empty($url[0])){
-            $controller= new MainController();
+            $controller= new MainController;
             $fileModel='../system/modules/main/models/mainModel.php';
             if(file_exists($fileModel)){  
                 $controller->loadModel("MainModel");
@@ -43,13 +45,26 @@ class App{
             //entra en el caso que se requiera llamar a un método
             if(isset($url[1])){
                //llamamos al método
-               $controller->{$url[1]}();
+               if(method_exists($controller, $url[1])){
+                       $controller->{$url[1]}();
+               }else{
+                  //página no encontrada
+                  $this->pageNotFound();
+               }
             }else{
                $controller->render();
             }
         }else{
-            $controller=new Pagerror();
+            //página no encontrada
+            $this->pageNotFound();
         }   
+    }
+    public function pageNotFound(){
+        $alert="Page not found: ".$_SERVER['REQUEST_URI'];
+        $this->log->add('lunium-framework','notice',$alert,'','');
+        require_once '../system/modules/main/controllers/mainController.php';
+        $controller=new MainController;
+        $controller->pageError();
     }
     public function helpersService()
     {
