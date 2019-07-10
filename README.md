@@ -22,28 +22,29 @@ Several quick start options are available:
 
 Within the download you'll find the following directories and files:
 
-lunium-framework/
-├── config/
-│   └── config.php
-├── log/
-│   └── sys.log
-├── public/
-│   ├── .htaccess
-│   └── index.php
-├── system/
-│   ├── core/
-│   │   ├── app.php
-│   │   ├── controller.php
-│   │   ├── database.php
-│   │   ├── model.php
-│   │   ├── navbar.php
+```shell
+lunium-framework/                           # → The root directory
+├── config/                                 # → Configuration directory
+│   └── config.php                          # → This file is used to configure the framework
+├── log/                                    # → Contains the system log
+│   └── sys.log                             # → System log
+├── public/                                 # → The public directory contains the index.php and HTACCESS
+│   ├── .htaccess                           # → Is a configuration file for use on web servers running the Apache
+│   └── index.php                           # → The front controller for all HTTP requests
+├── system/                                 # → The system directory
+│   ├── core/                               # → The core directory
+│   │   ├── app.php                         # → The main class that loads the modules with their controllers, models and views.
+│   │   ├── controller.php                  # → Is the base controller
+│   │   ├── database.php                    # → Provides functions to connect and fetch records from a MySQL database
+│   │   ├── model.php                       # → Is the base model
+│   │   ├── navbar.php                      # → Generate the menu dynamically.
 │   │   ├── session.php
-│   │   └── view.php
-│   ├── helpers/
+│   │   └── view.php                        # → Is the base view
+│   ├── helpers/                            # → Helper functions
 │   │   ├── dates.php
 │   │   └── form.php
-│   ├── modules/
-│   │   ├── empty/
+│   ├── modules/                            # → It is the directory where our applications are located.
+│   │   ├── empty/                          # → Empty module
 │   │   │   ├── controllers/
 │   │   │   │   └── emptyController.php
 │   │   │   ├── models/
@@ -53,9 +54,9 @@ lunium-framework/
 │   │   │   │   └── empty/
 │   │   │   │       └── index.php
 │   │   │   └── config.php
-│   │   ├── login/
-│   │   └── main/
-│   ├── services/
+│   │   ├── login/                          # → Login form with sessions
+│   │   └── main/                           # → Main module
+│   ├── services/                           # → The services directory
 │   │   └── syslog.php
 │   └── autoload.php
 ├── themes/
@@ -67,6 +68,7 @@ lunium-framework/
 │       ├── header.php
 │       └── index.html
 └── vendor/
+```
 
 ## Creator
 
