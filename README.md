@@ -27,15 +27,15 @@ lunium-framework/                           # → The root directory
 ├── config/                                 # → Configuration directory
 │   └── config.php                          # → This file is used to configure the framework
 ├── log/                                    # → Contains the system log
-│   └── sys.log                             # → Is a file that records either events that occur in the system
+│   └── sys.log                             # → Records either events that occur in the system
 ├── public/                                 # → The public directory contains the index.php and HTACCESS
 │   ├── .htaccess                           # → Configuration file for use on web servers running the Apache
 │   └── index.php                           # → The front controller for all HTTP requests
 ├── system/                                 # → The system directory
 │   ├── core/                               # → The core directory
-│   │   ├── app.php                         # → Loads the modules with their controllers, models and views.
+│   │   ├── app.php                         # → Loads the modules with their controllers, models and views
 │   │   ├── controller.php                  # → Is the base controller
-│   │   ├── database.php                    # → Provides functions to connect  from a MySQL database.
+│   │   ├── database.php                    # → Provides functions to connect  from a MySQL database
 │   │   ├── model.php                       # → Is the base model
 │   │   ├── navbar.php                      # → Generate the menu dynamically.
 │   │   ├── session.php                     # → Provides the functions of the sessions.
@@ -43,7 +43,7 @@ lunium-framework/                           # → The root directory
 │   ├── helpers/                            # → Helper functions
 │   │   ├── dates.php                       # → Formatting helper for outputting dates
 │   │   └── form.php                        # → Contains functions that assist in working with forms.
-│   ├── modules/                            # → It is the directory where our applications are located.
+│   ├── modules/                            # → It is the directory where our applications are located
 │   │   ├── empty/                          # → Empty module
 │   │   │   ├── controllers/                # → Contains class files for the controllers
 │   │   │   │   └── emptyController.php     # → Is the main controller of the application
@@ -57,7 +57,7 @@ lunium-framework/                           # → The root directory
 │   │   ├── login/                          # → Login form with sessions
 │   │   └── main/                           # → Main module
 │   ├── services/                           # → The services directory
-│   │   └── syslog.php                      # → Connects with the library monolog to create the system logs.
+│   │   └── syslog.php                      # → Connects with the library monolog to create the system logs
 │   └── autoload.php                        # → Is responsible for loading all lunium framework classes
 ├── themes/                                 # → It contains theme layout templates
 │   └── klivox/                             # → klivox is the default template
