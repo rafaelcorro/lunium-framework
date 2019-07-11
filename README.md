@@ -27,47 +27,47 @@ lunium-framework/                           # → The root directory
 ├── config/                                 # → Configuration directory
 │   └── config.php                          # → This file is used to configure the framework
 ├── log/                                    # → Contains the system log
-│   └── sys.log                             # → System log
+│   └── sys.log                             # → Is a file that records either events that occur in the system
 ├── public/                                 # → The public directory contains the index.php and HTACCESS
-│   ├── .htaccess                           # → Is a configuration file for use on web servers running the Apache
+│   ├── .htaccess                           # → Configuration file for use on web servers running the Apache
 │   └── index.php                           # → The front controller for all HTTP requests
 ├── system/                                 # → The system directory
 │   ├── core/                               # → The core directory
-│   │   ├── app.php                         # → The main class that loads the modules with their controllers, models and views.
+│   │   ├── app.php                         # → Loads the modules with their controllers, models and views.
 │   │   ├── controller.php                  # → Is the base controller
-│   │   ├── database.php                    # → Provides functions to connect and fetch records from a MySQL database
+│   │   ├── database.php                    # → Provides functions to connect  from a MySQL database.
 │   │   ├── model.php                       # → Is the base model
 │   │   ├── navbar.php                      # → Generate the menu dynamically.
-│   │   ├── session.php
+│   │   ├── session.php                     # → Provides the functions of the sessions.
 │   │   └── view.php                        # → Is the base view
 │   ├── helpers/                            # → Helper functions
-│   │   ├── dates.php
-│   │   └── form.php
+│   │   ├── dates.php                       # → Formatting helper for outputting dates
+│   │   └── form.php                        # → Contains functions that assist in working with forms.
 │   ├── modules/                            # → It is the directory where our applications are located.
 │   │   ├── empty/                          # → Empty module
-│   │   │   ├── controllers/
-│   │   │   │   └── emptyController.php
-│   │   │   ├── models/
-│   │   │   │   └── emptyModel.php
-│   │   │   ├── resources/
-│   │   │   ├── views/
-│   │   │   │   └── empty/
-│   │   │   │       └── index.php
-│   │   │   └── config.php
+│   │   │   ├── controllers/                # → Contains class files for the controllers
+│   │   │   │   └── emptyController.php     # → Is the main controller of the application
+│   │   │   ├── models/                     # → Contains class files for the models
+│   │   │   │   └── emptyModel.php          # → Is the main model of the application
+│   │   │   ├── resources/                  # → Contains the images, css, javascript of the module
+│   │   │   ├── views/                      # → Contains the views of the module
+│   │   │   │   └── empty/                  # → Main folder of the view
+│   │   │   │       └── index.php           # → Is the main view of the application
+│   │   │   └── config.php                  # → This file is used to configure the application
 │   │   ├── login/                          # → Login form with sessions
 │   │   └── main/                           # → Main module
 │   ├── services/                           # → The services directory
-│   │   └── syslog.php
-│   └── autoload.php
-├── themes/
-│   └── klivox/
-│       ├── css/
-│       │   └── klivox.css
-│       ├── config.php
-│       ├── footer.php
-│       ├── header.php
-│       └── index.html
-└── vendor/
+│   │   └── syslog.php                      # → Connects with the library monolog to create the system logs.
+│   └── autoload.php                        # → Is responsible for loading all lunium framework classes
+├── themes/                                 # → It contains theme layout templates
+│   └── klivox/                             # → klivox is the default template
+│       ├── css/                            # → The css directory
+│       │   └── klivox.css                  # → The stylesheet, klivox.css, holds all the CSS style rules
+│       ├── config.php                      # → This file is used to configure the template
+│       ├── footer.php                      # → Contains the closing of the html content
+│       ├── header.php                      # → Contains all the information that needs to be at the top
+│       └── index.html                      # → index.html output blank page
+└── vendor/                                 # → Composer updates all packages from vendor directory
 ```
 
 ## Creator
