@@ -29,7 +29,7 @@ lunium-framework/                           # → The root directory
 ├── log/                                    # → Contains the system log
 │   └── sys.log                             # → Records either events that occur in the system
 ├── public/                                 # → The public directory contains the index.php and HTACCESS
-│   ├── .htaccess                           # → Configuration file for use on web servers running the Apache
+│   ├── .htaccess                           # → Configuration file used on web servers running the Apache
 │   └── index.php                           # → The front controller for all HTTP requests
 ├── system/                                 # → The system directory
 │   ├── core/                               # → The core directory
@@ -37,7 +37,7 @@ lunium-framework/                           # → The root directory
 │   │   ├── controller.php                  # → Is the base controller
 │   │   ├── database.php                    # → Provides functions to connect  from a MySQL database
 │   │   ├── model.php                       # → Is the base model
-│   │   ├── navbar.php                      # → Generate the menu dynamically.
+│   │   ├── navbar.php                      # → Generates the menu dynamically.
 │   │   ├── session.php                     # → Provides the functions of the sessions.
 │   │   └── view.php                        # → Is the base view
 │   ├── helpers/                            # → Helper functions
