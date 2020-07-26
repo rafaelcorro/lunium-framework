@@ -10,24 +10,10 @@
 class App{
     function __construct(){
         $this->log=new Syslog();
-        
+        //cargamos todos los helpers
         $this->helpersService();
-        //obtenemos la url
-        $url=isset($_GET["url"]) ? $_GET['url']:null;
-
-        //tratamos la url 
-        $url=rtrim($url,'/');
-        $url=explode('/',$url);
-
-        if(empty($url[0])){
-            $controller= new MainController;
-            $fileModel='../system/modules/main/models/mainModel.php';
-            if(file_exists($fileModel)){  
-                $controller->loadModel("MainModel");
-            }
-            $controller->render();
-            return false;
-        }
+        //obtenemos la url actual
+        $url=helper_url();
         
         $fileController='../system/modules/'.$url[0].'/controllers/'.$url[0]."Controller.php";
         $fileModel='../system/modules/'.$url[0].'/models/'.$url[0]."Model.php";

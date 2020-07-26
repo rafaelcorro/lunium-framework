@@ -16,7 +16,7 @@ if (!function_exists('helper_formAction')) {
      */
     function helper_formAction($controller,$method)
     {
-        $url='http://'.$_SERVER['SERVER_NAME'].'/'.constant('DIRECTORY').'/public/'.$controller.'/'.$method.'/';
+        $url=constant('PROTOCOL').'://'.$_SERVER['SERVER_NAME'].'/'.constant('DIRECTORY').'/public/'.$controller.'/'.$method.'/';
         return $url;  
     }
 }

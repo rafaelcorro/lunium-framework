@@ -11,5 +11,7 @@
 //menú padre: none (Por defecto)
 $menu_parent="Otros";
 $menu_title="Empty";
+//el orden del menú aparece de mayor a menor prioridad
+$menu_priority="5";
 
 

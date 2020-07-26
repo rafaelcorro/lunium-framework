@@ -11,7 +11,7 @@
   <title><?php echo constant('TITLE');?></title>
   
     <?php
-    $baseurl="http://" . $_SERVER['SERVER_NAME'] . "/".constant('DIRECTORY')."/";
+    $baseurl=constant('PROTOCOL')."://" . $_SERVER['SERVER_NAME'] . "/".constant('DIRECTORY')."/";
     echo "<base href='".$baseurl."' />";
     ?>
 
@@ -23,13 +23,19 @@
 -->
   <!-- Custom styles for this template -->
   <link href="themes/klivox/css/klivox.css" rel="stylesheet">
+  <!--JQuery-->
   <link href="vendor/components/jqueryui/themes/base/jquery-ui.min.css" rel="stylesheet">
-  
   <script src="vendor/components/jquery/jquery.min.js"></script>
   <script src="vendor/components/jqueryui/jquery-ui.min.js"></script>
-
+  <!--Bootstrap-->
   <script src="vendor/twbs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-
+  <!--toogle Switches  require jquery-->
+  <link href="vendor/nostalgiaz/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.min.css" rel="stylesheet">
+  <script src="vendor/nostalgiaz/bootstrap-switch/dist/js/bootstrap-switch.min.js"></script>
+  <!--fortawesome icons-->
+  <link href="vendor/fortawesome/font-awesome/css/all.min.css" rel="stylesheet">
+  <script src="vendor/fortawesome/font-awesome/js/all.min.js"></script>
+  <!----------------------------------->
 </head>
 
 <body>

@@ -75,7 +75,7 @@ class LoginModel extends Model{
             $session->set("login_rol",$rows[0]->rol);
             
             if(isset($_REQUEST["remember"]) && $_REQUEST["remember"]=="on"){
-                createRememberCookie($rows[0]->id);
+                $this->createRememberCookie($rows[0]->id);
             }
             
             $this->log->add('lunium-framework','info','Session is started',['email'=>$rows[0]->email],'');
@@ -109,7 +109,7 @@ class LoginModel extends Model{
     
     
     public static function login() {
-echo "holadddd";
+        echo "<-------";
        /* // Validate the login form inputs.
         if (!Utility\Input::check($_POST, self::$_inputs)) {
             return false;

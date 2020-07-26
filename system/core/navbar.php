@@ -16,14 +16,13 @@ class Navbar{
         //leemos los directorios que están en modules para leer el menú
         $directory = opendir("../system/modules/"); //ruta actual
         $items=array();
-        while ($file = readdir($directory)) 
-        {
+        while ($file = readdir($directory)){
             if (!is_dir($file)){
                 try{
                     $filename="../system/modules/".$file."/config.php";
                     if(file_exists($filename)){
                         require $filename;
-                        $items[]=array('modulo'=>$file,'parent'=>$menu_parent,'title'=>$menu_title);
+                        $items[]=array('modulo'=>$file,'parent'=>$menu_parent,'title'=>$menu_title,'priority'=>$menu_priority);
                     }else{
                         throw new Exception("Module '".$file."': Configuration file 'config.php' not found!!!");
                     }
@@ -35,6 +34,16 @@ class Navbar{
             }
         }
         $parents=array();
+        
+        //ordenamos el array por orden de prioridad descendiente
+        function cmp($a, $b){
+            if ($a["priority"] == $b["priority"]) {
+                return 0;
+            }
+            return ($a["priority"] > $b["priority"]) ? -1 : 1;
+        }
+        usort($items, "cmp");
+
         //extraemos los padres de los items del menú
         foreach($items as $value){
             $parent=$value['parent'];
@@ -47,10 +56,8 @@ class Navbar{
         //cargamos el array de configuración del menú
         require_once '../themes/'. constant('TEMPLATE').'/config.php';
         
-        
         //--------------login--------------
         if(isset($_SESSION["authorized"]) && $_SESSION["authorized"]==1){
-
             //pintamos el menú
             $li_attr=$menuAttr["li-menu"];
             $a_attr=$menuAttr["a-menu"];

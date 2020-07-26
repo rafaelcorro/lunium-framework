@@ -14,25 +14,23 @@ class Controller{
         //creamos la vista
         $this->view=new View();
         $this->log=new Syslog();
-        
-        $url=$_SERVER["REQUEST_URI"];
-        $url=rtrim($url,'/');
-        $url=explode('/',$url);
+
+        $url=helper_url();
         
         $session=new Session();
         $session->init();
         
-        include('../system/modules/login/models/loginModel.php');
         $login=new LoginModel();
         $login->withCookie();
         
         if(!$session->authorized()){
-            $alert="Not authorized to access this page: ".$url[3];
+            $page=helper_string_url($url);
+            $alert="Not authorized to access this page: ".$page;
             $this->log->add('lunium-framework','notice',$alert,'','');
         }
         if($session->authorized()){
             $this->view->message="Esta es la página principal.";
-        }elseif($url[3]!="login"){
+        }elseif($url[0]!="login"){
             header('Location: /'. constant('DIRECTORY').'/public/login/');
             exit;
         }

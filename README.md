@@ -42,7 +42,8 @@ lunium-framework/                           # → The root directory
 │   │   └── view.php                        # → Is the base view
 │   ├── helpers/                            # → Helper functions
 │   │   ├── dates.php                       # → Formatting helper for outputting dates
-│   │   └── form.php                        # → Contains functions that assist in working with forms.
+│   │   ├── form.php                        # → Contains functions that assist in working with forms.
+│   │   └── url.php                         # → contains functions that return the current url.
 │   ├── modules/                            # → It is the directory where our applications are located
 │   │   ├── empty/                          # → Empty module
 │   │   │   ├── controllers/                # → Contains class files for the controllers

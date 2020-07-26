@@ -9,7 +9,7 @@
  */
 
 define('DEVELOPMENT','yes');
-
+define('PROTOCOL','http');
 define('DIRECTORY','lunium-framework');
 define('TEMPLATE','klivox');
 define('TITLE','Lunium Framework');

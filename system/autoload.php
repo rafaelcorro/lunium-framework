@@ -30,9 +30,10 @@ class Autoloader{
             //filtramos para que solo cargue las clases del módulo activo y las clases generales
             $libs = strpos($file->getPathname(), "system/core/");
             $services= strpos($file->getPathname(), "system/services/");
+            $login= strpos($file->getPathname(), "system/modules/login");
             $module = strpos($file->getPathname(), "system/modules/".$activeModule);
             
-            if (!$module === false || !$libs === false || !$services === false) {
+            if (!$login === false || !$module === false || !$libs === false || !$services === false) {
                 
                 if (strtolower($file->getFilename()) === strtolower($filename)) {
                     if ($file->isReadable()) {
