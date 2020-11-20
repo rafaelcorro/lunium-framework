@@ -61,7 +61,7 @@ class App{
 
             foreach ($dir as $helpersfilename){
                 $helper='../system/helpers/'.$helpersfilename;
-                if(file($helper)){
+                if(is_file($helper)){
                  require_once($helper);
                 }
              }

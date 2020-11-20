@@ -6,11 +6,8 @@ class Autoloader{
 
     public static function loader($className){
 
-        $url=isset($_GET["url"]) ? $_GET['url']:null;
-
-        //tratamos la url 
-        $url=rtrim($url,'/');
-        $url=explode('/',$url);
+        include('../system/helpers/url.php');
+        $url=helper_url();
         
         if(empty($url[0])){
           $activeModule="main"; 

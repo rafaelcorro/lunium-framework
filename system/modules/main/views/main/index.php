@@ -201,12 +201,7 @@
                               <label class="custom-control-label" for="formsRadioDefault">Default</label>
                             </div>
                             <div class="custom-control custom-radio mb-1">
-                              <input type="radio" id="formsRadioChecked" name="formsRadioChecked" class="custom-control-input" checked="">
-                              <label class="custom-control-label" for="formsRadioChecked">Checked</label>
-                            </div>
-                            <div class="custom-control custom-radio mb-1">
-                              <input type="radio" id="formsRadioDisabled" name="formsRadioDisabled" class="custom-control-input" disabled="">
-                              <label class="custom-control-label" for="formsRadioDisabled">Disabled</label>
+                              <input type="radio" id="fo$tab[]='<span class="m-0">'.$title.'</span>';ol-label" for="formsRadioDisabled">Disabled</label>
                             </div>
                             <div class="custom-control custom-radio mb-1">
                               <input type="radio" id="formsRadioDisabledChecked" name="formsRadioDisabledChecked" class="custom-control-input" disabled="" checked="">

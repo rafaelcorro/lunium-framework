@@ -7,10 +7,11 @@
  * @license     MIT
  *
  */
-class Activity{
-    public $title;
-    public $description;
-    public $price;
+
+class IconsModel extends Model{
+    function __construct(){
+        parent::__construct();
+
+    }
 }
-	
 
